@@ -1,9 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { UserButton } from "@clerk/nextjs";
 
-export default function Home(): React.ReactElement {
+function SetupPage(): React.ReactElement {
   return (
-    <div>
-      <Button>Click Me</Button>
+    <div className="p-4">
+      <UserButton afterSignOutUrl="/" />
     </div>
   );
 }
+
+export default SetupPage;

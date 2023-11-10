@@ -1,7 +1,8 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
+import { NextFont } from "next/dist/compiled/@next/font";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { NextFont } from "next/dist/compiled/@next/font";
 
 const inter: NextFont = Inter({ subsets: ["latin"] });
 
@@ -10,14 +11,18 @@ export const metadata: Metadata = {
   description: "Admin Dashboard",
 };
 
-export default function RootLayout({
+function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }): React.ReactElement {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }
+
+export default RootLayout;
