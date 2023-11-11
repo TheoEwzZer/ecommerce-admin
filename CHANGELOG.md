@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.1.0...v1.2.0) (2023-11-11)
+
+
+### ✨ Features
+
+* add store creation API endpoint and toast notifications ([3ef48dc](https://github.com/TheoEwzZer/ecommerce-admin/commit/3ef48dcf550c563d59be6e6f1fa3573af8b64bf1))
+
+
+### 🔒️ Security
+
+* update .gitignore to include .env file ([c78cc8a](https://github.com/TheoEwzZer/ecommerce-admin/commit/c78cc8a1955913a897f520bd824c02c5a29609af))
+
+
+### 📦 Dependencies
+
+* add prisma and axios dependencies ([1fb9d7c](https://github.com/TheoEwzZer/ecommerce-admin/commit/1fb9d7c34e42822d5f664880583d1555c44f13de))
+
 ## [1.1.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.0.0...v1.1.0) (2023-11-11)
 
 
