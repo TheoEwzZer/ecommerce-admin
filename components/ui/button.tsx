@@ -1,13 +1,6 @@
-import {
-  ButtonHTMLAttributes,
-  ForwardRefExoticComponent,
-  ForwardedRef,
-  ReactElement,
-  RefAttributes,
-  forwardRef,
-} from "react";
+import { ButtonHTMLAttributes, ForwardedRef, ReactElement, forwardRef } from "react";
 
-import { Slot, SlotProps } from "@radix-ui/react-slot";
+import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
@@ -45,24 +38,21 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-const Button: ForwardRefExoticComponent<ButtonProps & RefAttributes<HTMLButtonElement>> =
-  forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-      { className, variant, size, asChild = false, ...props }: ButtonProps,
-      ref: ForwardedRef<HTMLButtonElement>
-    ): ReactElement => {
-      const Comp:
-        | ForwardRefExoticComponent<SlotProps & RefAttributes<HTMLElement>>
-        | "button" = asChild ? Slot : "button";
-      return (
-        <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-        />
-      );
-    }
-  );
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    { className, variant, size, asChild = false, ...props }: ButtonProps,
+    ref: ForwardedRef<HTMLButtonElement>
+  ): ReactElement => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
 
 Button.displayName = "Button";
 

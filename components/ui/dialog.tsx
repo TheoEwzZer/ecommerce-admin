@@ -6,11 +6,8 @@ import {
   ComponentPropsWithoutRef,
   ElementRef,
   FC,
-  ForwardRefExoticComponent,
-  ForwardedRef,
   HTMLAttributes,
   ReactElement,
-  RefAttributes,
   forwardRef,
 } from "react";
 
@@ -18,30 +15,17 @@ import { cn } from "@/lib/utils";
 
 const Dialog: FC<DialogPrimitive.DialogProps> = DialogPrimitive.Root;
 
-const DialogTrigger: ForwardRefExoticComponent<
-  DialogPrimitive.DialogTriggerProps & RefAttributes<HTMLButtonElement>
-> = DialogPrimitive.Trigger;
+const DialogTrigger = DialogPrimitive.Trigger;
 
 const DialogPortal: FC<DialogPrimitive.DialogPortalProps> = DialogPrimitive.Portal;
 
-const DialogClose: ForwardRefExoticComponent<
-  DialogPrimitive.DialogCloseProps & RefAttributes<HTMLButtonElement>
-> = DialogPrimitive.Close;
+const DialogClose = DialogPrimitive.Close;
 
-const DialogOverlay: ForwardRefExoticComponent<
-  Omit<DialogPrimitive.DialogOverlayProps & RefAttributes<HTMLDivElement>, "ref"> &
-    RefAttributes<HTMLDivElement>
-> = forwardRef<
+const DialogOverlay = forwardRef<
   ElementRef<typeof DialogPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(
-  (
-    {
-      className,
-      ...props
-    }: Omit<DialogPrimitive.DialogOverlayProps & RefAttributes<HTMLDivElement>, "ref">,
-    ref: ForwardedRef<HTMLDivElement>
-  ): ReactElement => (
+  ({ className, ...props }, ref): ReactElement => (
     <DialogPrimitive.Overlay
       ref={ref}
       className={cn(
@@ -55,21 +39,11 @@ const DialogOverlay: ForwardRefExoticComponent<
 
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
-const DialogContent: ForwardRefExoticComponent<
-  Omit<DialogPrimitive.DialogContentProps & RefAttributes<HTMLDivElement>, "ref"> &
-    RefAttributes<HTMLDivElement>
-> = forwardRef<
+const DialogContent = forwardRef<
   ElementRef<typeof DialogPrimitive.Content>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(
-  (
-    {
-      className,
-      children,
-      ...props
-    }: Omit<DialogPrimitive.DialogContentProps & RefAttributes<HTMLDivElement>, "ref">,
-    ref: ForwardedRef<HTMLDivElement>
-  ): ReactElement => (
+  ({ className, children, ...props }, ref): ReactElement => (
     <DialogPortal>
       <DialogOverlay />
       <DialogPrimitive.Content
@@ -119,20 +93,11 @@ const DialogFooter: {
 
 DialogFooter.displayName = "DialogFooter";
 
-const DialogTitle: ForwardRefExoticComponent<
-  Omit<DialogPrimitive.DialogTitleProps & RefAttributes<HTMLHeadingElement>, "ref"> &
-    RefAttributes<HTMLHeadingElement>
-> = forwardRef<
+const DialogTitle = forwardRef<
   ElementRef<typeof DialogPrimitive.Title>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(
-  (
-    {
-      className,
-      ...props
-    }: Omit<DialogPrimitive.DialogTitleProps & RefAttributes<HTMLHeadingElement>, "ref">,
-    ref: ForwardedRef<HTMLHeadingElement>
-  ): ReactElement => (
+  ({ className, ...props }, ref): ReactElement => (
     <DialogPrimitive.Title
       ref={ref}
       className={cn("text-lg font-semibold leading-none tracking-tight", className)}
@@ -143,26 +108,11 @@ const DialogTitle: ForwardRefExoticComponent<
 
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
 
-const DialogDescription: ForwardRefExoticComponent<
-  Omit<
-    DialogPrimitive.DialogDescriptionProps & RefAttributes<HTMLParagraphElement>,
-    "ref"
-  > &
-    RefAttributes<HTMLParagraphElement>
-> = forwardRef<
+const DialogDescription = forwardRef<
   ElementRef<typeof DialogPrimitive.Description>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(
-  (
-    {
-      className,
-      ...props
-    }: Omit<
-      DialogPrimitive.DialogDescriptionProps & RefAttributes<HTMLParagraphElement>,
-      "ref"
-    >,
-    ref: ForwardedRef<HTMLParagraphElement>
-  ): ReactElement => (
+  ({ className, ...props }, ref): ReactElement => (
     <DialogPrimitive.Description
       ref={ref}
       className={cn("text-sm text-muted-foreground", className)}

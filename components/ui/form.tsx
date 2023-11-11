@@ -2,12 +2,10 @@ import {
   ComponentPropsWithoutRef,
   Context,
   ElementRef,
-  ForwardRefExoticComponent,
   ForwardedRef,
   HTMLAttributes,
   ReactElement,
   ReactNode,
-  RefAttributes,
   createContext,
   forwardRef,
   useContext,
@@ -15,7 +13,7 @@ import {
 } from "react";
 
 import * as LabelPrimitive from "@radix-ui/react-label";
-import { Slot, SlotProps } from "@radix-ui/react-slot";
+import { Slot } from "@radix-ui/react-slot";
 import {
   Controller,
   ControllerProps,
@@ -122,9 +120,7 @@ type FormItemContextValue = {
 const FormItemContext: Context<FormItemContextValue> =
   createContext<FormItemContextValue>({} as FormItemContextValue);
 
-const FormItem: ForwardRefExoticComponent<
-  HTMLAttributes<HTMLDivElement> & RefAttributes<HTMLDivElement>
-> = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
+const FormItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   (
     { className, ...props }: HTMLAttributes<HTMLDivElement>,
     ref: ForwardedRef<HTMLDivElement>
@@ -145,63 +141,49 @@ const FormItem: ForwardRefExoticComponent<
 
 FormItem.displayName = "FormItem";
 
-const FormLabel: ForwardRefExoticComponent<
-  Omit<LabelPrimitive.LabelProps & RefAttributes<HTMLLabelElement>, "ref"> &
-    RefAttributes<HTMLLabelElement>
-> = forwardRef<
+const FormLabel = forwardRef<
   ElementRef<typeof LabelPrimitive.Root>,
   ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(
-  (
-    {
-      className,
-      ...props
-    }: Omit<LabelPrimitive.LabelProps & RefAttributes<HTMLLabelElement>, "ref">,
-    ref: ForwardedRef<HTMLLabelElement>
-  ): ReactElement => {
-    const { error, formItemId } = useFormField();
+>(({ className, ...props }, ref): ReactElement => {
+  const { error, formItemId } = useFormField();
 
-    return (
-      <Label
-        ref={ref}
-        className={cn(error && "text-destructive", className)}
-        htmlFor={formItemId}
-        {...props}
-      />
-    );
-  }
-);
+  return (
+    <Label
+      ref={ref}
+      className={cn(error && "text-destructive", className)}
+      htmlFor={formItemId}
+      {...props}
+    />
+  );
+});
 
 FormLabel.displayName = "FormLabel";
 
-const FormControl: ForwardRefExoticComponent<
-  Omit<SlotProps & RefAttributes<HTMLElement>, "ref"> & RefAttributes<HTMLElement>
-> = forwardRef<ElementRef<typeof Slot>, ComponentPropsWithoutRef<typeof Slot>>(
-  (
-    { ...props }: Omit<SlotProps & RefAttributes<HTMLElement>, "ref">,
-    ref: ForwardedRef<HTMLElement>
-  ): ReactElement => {
-    const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
+const FormControl = forwardRef<
+  ElementRef<typeof Slot>,
+  ComponentPropsWithoutRef<typeof Slot>
+>(({ ...props }, ref): ReactElement => {
+  const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 
-    return (
-      <Slot
-        ref={ref}
-        id={formItemId}
-        aria-describedby={
-          !error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`
-        }
-        aria-invalid={!!error}
-        {...props}
-      />
-    );
-  }
-);
+  return (
+    <Slot
+      ref={ref}
+      id={formItemId}
+      aria-describedby={
+        !error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`
+      }
+      aria-invalid={!!error}
+      {...props}
+    />
+  );
+});
 
 FormControl.displayName = "FormControl";
 
-const FormDescription: ForwardRefExoticComponent<
-  HTMLAttributes<HTMLParagraphElement> & RefAttributes<HTMLParagraphElement>
-> = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
+const FormDescription = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(
   (
     { className, ...props }: HTMLAttributes<HTMLParagraphElement>,
     ref: ForwardedRef<HTMLParagraphElement>
@@ -221,9 +203,10 @@ const FormDescription: ForwardRefExoticComponent<
 
 FormDescription.displayName = "FormDescription";
 
-const FormMessage: ForwardRefExoticComponent<
-  HTMLAttributes<HTMLParagraphElement> & RefAttributes<HTMLParagraphElement>
-> = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
+const FormMessage = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(
   (
     { className, children, ...props }: HTMLAttributes<HTMLParagraphElement>,
     ref: ForwardedRef<HTMLParagraphElement>
