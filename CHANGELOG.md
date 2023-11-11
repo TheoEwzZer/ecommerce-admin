@@ -6,6 +6,7 @@
 ### ✨ Features
 
 * add store creation API endpoint and toast notifications ([3ef48dc](https://github.com/TheoEwzZer/ecommerce-admin/commit/3ef48dcf550c563d59be6e6f1fa3573af8b64bf1))
+* dashboard setup ([932dc5f](https://github.com/TheoEwzZer/ecommerce-admin/commit/932dc5f8a5054236c0827b744ef1778ba2aa1434))
 
 
 ### 🔒️ Security
