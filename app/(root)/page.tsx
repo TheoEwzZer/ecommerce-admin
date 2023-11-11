@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { ReactElement, useEffect } from "react";
 
 import { useStoreModal, useStoreModalStore } from "@/hooks/use-store-modal";
 
-function SetupPage(): React.ReactElement | null {
+function SetupPage(): ReactElement | null {
   const onOpen: () => void = useStoreModal(
     (state: useStoreModalStore): (() => void) => state.onOpen
   );

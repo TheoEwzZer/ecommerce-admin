@@ -1,5 +1,7 @@
 "use client";
 
+import { ReactElement, ReactNode } from "react";
+
 import {
   Dialog,
   DialogContent,
@@ -13,7 +15,7 @@ interface ModalProps {
   description: string;
   isOpen: boolean;
   onClose: () => void;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 export function Modal({
@@ -22,7 +24,7 @@ export function Modal({
   isOpen,
   onClose,
   children,
-}: ModalProps): React.ReactElement {
+}: ModalProps): ReactElement {
   const onChange: (open: boolean) => void = (open: boolean): void => {
     if (open) {
       onClose();

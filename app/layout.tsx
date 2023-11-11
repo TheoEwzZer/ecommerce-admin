@@ -1,3 +1,5 @@
+import { ReactElement, ReactNode } from "react";
+
 import { ClerkProvider } from "@clerk/nextjs";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { Inter } from "next/font/google";
@@ -14,11 +16,7 @@ export const metadata: Metadata = {
   description: "Admin Dashboard",
 };
 
-function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}): React.ReactElement {
+function RootLayout({ children }: { children: ReactNode }): ReactElement {
   return (
     <ClerkProvider>
       <html lang="en">

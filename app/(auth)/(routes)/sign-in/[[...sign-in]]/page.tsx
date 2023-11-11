@@ -1,6 +1,8 @@
+import { ReactElement } from "react";
+
 import { SignIn } from "@clerk/nextjs";
 
-function Page(): React.ReactElement {
+function Page(): ReactElement {
   return <SignIn />;
 }
 

@@ -1,44 +1,47 @@
 "use client";
 
-import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  FC,
+  ForwardRefExoticComponent,
+  ForwardedRef,
+  HTMLAttributes,
+  ReactElement,
+  RefAttributes,
+  forwardRef,
+} from "react";
 
 import { cn } from "@/lib/utils";
 
-const Dialog: React.FC<DialogPrimitive.DialogProps> = DialogPrimitive.Root;
+const Dialog: FC<DialogPrimitive.DialogProps> = DialogPrimitive.Root;
 
-const DialogTrigger: React.ForwardRefExoticComponent<
-  DialogPrimitive.DialogTriggerProps & React.RefAttributes<HTMLButtonElement>
+const DialogTrigger: ForwardRefExoticComponent<
+  DialogPrimitive.DialogTriggerProps & RefAttributes<HTMLButtonElement>
 > = DialogPrimitive.Trigger;
 
-const DialogPortal: React.FC<DialogPrimitive.DialogPortalProps> =
-  DialogPrimitive.Portal;
+const DialogPortal: FC<DialogPrimitive.DialogPortalProps> = DialogPrimitive.Portal;
 
-const DialogClose: React.ForwardRefExoticComponent<
-  DialogPrimitive.DialogCloseProps & React.RefAttributes<HTMLButtonElement>
+const DialogClose: ForwardRefExoticComponent<
+  DialogPrimitive.DialogCloseProps & RefAttributes<HTMLButtonElement>
 > = DialogPrimitive.Close;
 
-const DialogOverlay: React.ForwardRefExoticComponent<
-  Omit<
-    DialogPrimitive.DialogOverlayProps & React.RefAttributes<HTMLDivElement>,
-    "ref"
-  > &
-    React.RefAttributes<HTMLDivElement>
-> = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
+const DialogOverlay: ForwardRefExoticComponent<
+  Omit<DialogPrimitive.DialogOverlayProps & RefAttributes<HTMLDivElement>, "ref"> &
+    RefAttributes<HTMLDivElement>
+> = forwardRef<
+  ElementRef<typeof DialogPrimitive.Overlay>,
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(
   (
     {
       className,
       ...props
-    }: Omit<
-      DialogPrimitive.DialogOverlayProps & React.RefAttributes<HTMLDivElement>,
-      "ref"
-    >,
-    ref: React.ForwardedRef<HTMLDivElement>
-  ): React.ReactElement => (
+    }: Omit<DialogPrimitive.DialogOverlayProps & RefAttributes<HTMLDivElement>, "ref">,
+    ref: ForwardedRef<HTMLDivElement>
+  ): ReactElement => (
     <DialogPrimitive.Overlay
       ref={ref}
       className={cn(
@@ -52,27 +55,21 @@ const DialogOverlay: React.ForwardRefExoticComponent<
 
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
-const DialogContent: React.ForwardRefExoticComponent<
-  Omit<
-    DialogPrimitive.DialogContentProps & React.RefAttributes<HTMLDivElement>,
-    "ref"
-  > &
-    React.RefAttributes<HTMLDivElement>
-> = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+const DialogContent: ForwardRefExoticComponent<
+  Omit<DialogPrimitive.DialogContentProps & RefAttributes<HTMLDivElement>, "ref"> &
+    RefAttributes<HTMLDivElement>
+> = forwardRef<
+  ElementRef<typeof DialogPrimitive.Content>,
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(
   (
     {
       className,
       children,
       ...props
-    }: Omit<
-      DialogPrimitive.DialogContentProps & React.RefAttributes<HTMLDivElement>,
-      "ref"
-    >,
-    ref: React.ForwardedRef<HTMLDivElement>
-  ): React.ReactElement => (
+    }: Omit<DialogPrimitive.DialogContentProps & RefAttributes<HTMLDivElement>, "ref">,
+    ref: ForwardedRef<HTMLDivElement>
+  ): ReactElement => (
     <DialogPortal>
       <DialogOverlay />
       <DialogPrimitive.Content
@@ -96,20 +93,11 @@ const DialogContent: React.ForwardRefExoticComponent<
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 
 const DialogHeader: {
-  ({
-    className,
-    ...props
-  }: React.HTMLAttributes<HTMLDivElement>): React.ReactElement;
+  ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactElement;
   displayName: string;
-} = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>): React.ReactElement => (
+} = ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactElement => (
   <div
-    className={cn(
-      "flex flex-col space-y-1.5 text-center sm:text-left",
-      className
-    )}
+    className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}
     {...props}
   />
 );
@@ -117,15 +105,9 @@ const DialogHeader: {
 DialogHeader.displayName = "DialogHeader";
 
 const DialogFooter: {
-  ({
-    className,
-    ...props
-  }: React.HTMLAttributes<HTMLDivElement>): React.ReactElement;
+  ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactElement;
   displayName: string;
-} = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>): React.ReactElement => (
+} = ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactElement => (
   <div
     className={cn(
       "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
@@ -137,33 +119,23 @@ const DialogFooter: {
 
 DialogFooter.displayName = "DialogFooter";
 
-const DialogTitle: React.ForwardRefExoticComponent<
-  Omit<
-    DialogPrimitive.DialogTitleProps & React.RefAttributes<HTMLHeadingElement>,
-    "ref"
-  > &
-    React.RefAttributes<HTMLHeadingElement>
-> = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
+const DialogTitle: ForwardRefExoticComponent<
+  Omit<DialogPrimitive.DialogTitleProps & RefAttributes<HTMLHeadingElement>, "ref"> &
+    RefAttributes<HTMLHeadingElement>
+> = forwardRef<
+  ElementRef<typeof DialogPrimitive.Title>,
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(
   (
     {
       className,
       ...props
-    }: Omit<
-      DialogPrimitive.DialogTitleProps &
-        React.RefAttributes<HTMLHeadingElement>,
-      "ref"
-    >,
-    ref: React.ForwardedRef<HTMLHeadingElement>
-  ): React.ReactElement => (
+    }: Omit<DialogPrimitive.DialogTitleProps & RefAttributes<HTMLHeadingElement>, "ref">,
+    ref: ForwardedRef<HTMLHeadingElement>
+  ): ReactElement => (
     <DialogPrimitive.Title
       ref={ref}
-      className={cn(
-        "text-lg font-semibold leading-none tracking-tight",
-        className
-      )}
+      className={cn("text-lg font-semibold leading-none tracking-tight", className)}
       {...props}
     />
   )
@@ -171,28 +143,26 @@ const DialogTitle: React.ForwardRefExoticComponent<
 
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
 
-const DialogDescription: React.ForwardRefExoticComponent<
+const DialogDescription: ForwardRefExoticComponent<
   Omit<
-    DialogPrimitive.DialogDescriptionProps &
-      React.RefAttributes<HTMLParagraphElement>,
+    DialogPrimitive.DialogDescriptionProps & RefAttributes<HTMLParagraphElement>,
     "ref"
   > &
-    React.RefAttributes<HTMLParagraphElement>
-> = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+    RefAttributes<HTMLParagraphElement>
+> = forwardRef<
+  ElementRef<typeof DialogPrimitive.Description>,
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(
   (
     {
       className,
       ...props
     }: Omit<
-      DialogPrimitive.DialogDescriptionProps &
-        React.RefAttributes<HTMLParagraphElement>,
+      DialogPrimitive.DialogDescriptionProps & RefAttributes<HTMLParagraphElement>,
       "ref"
     >,
-    ref: React.ForwardedRef<HTMLParagraphElement>
-  ): React.ReactElement => (
+    ref: ForwardedRef<HTMLParagraphElement>
+  ): ReactElement => (
     <DialogPrimitive.Description
       ref={ref}
       className={cn("text-sm text-muted-foreground", className)}
@@ -205,13 +175,13 @@ DialogDescription.displayName = DialogPrimitive.Description.displayName;
 
 export {
   Dialog,
-  DialogPortal,
-  DialogOverlay,
   DialogClose,
-  DialogTrigger,
   DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
   DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
 };

@@ -1,9 +1,11 @@
 "use client";
 
+import { ReactElement } from "react";
+
 import { useStoreModal, useStoreModalStore } from "@/hooks/use-store-modal";
 import { Modal } from "../ui/modal";
 
-export function StoreModal(): React.ReactElement {
+export function StoreModal(): ReactElement {
   const StoreModal: useStoreModalStore = useStoreModal();
 
   return (
