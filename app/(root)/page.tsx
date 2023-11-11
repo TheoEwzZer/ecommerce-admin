@@ -1,11 +1,24 @@
-import { UserButton } from "@clerk/nextjs";
+"use client";
 
-function SetupPage(): React.ReactElement {
-  return (
-    <div className="p-4">
-      <UserButton afterSignOutUrl="/" />
-    </div>
+import { useEffect } from "react";
+
+import { useStoreModal, useStoreModalStore } from "@/hooks/use-store-modal";
+
+function SetupPage(): React.ReactElement | null {
+  const onOpen: () => void = useStoreModal(
+    (state: useStoreModalStore): (() => void) => state.onOpen
   );
+  const isOpen: boolean = useStoreModal(
+    (state: useStoreModalStore): boolean => state.isOpen
+  );
+
+  useEffect((): void => {
+    if (!isOpen) {
+      onOpen();
+    }
+  }, [isOpen, onOpen]);
+
+  return null;
 }
 
 export default SetupPage;

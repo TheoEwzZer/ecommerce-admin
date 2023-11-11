@@ -1,7 +1,10 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import type { Metadata } from "next";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { Inter } from "next/font/google";
+import { Metadata } from "next/types";
+
+import { ModalProvider } from "@/providers/modal-provider";
+
 import "./globals.css";
 
 const inter: NextFont = Inter({ subsets: ["latin"] });
@@ -19,7 +22,10 @@ function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <ModalProvider />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
