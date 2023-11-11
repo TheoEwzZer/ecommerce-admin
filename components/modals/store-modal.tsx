@@ -1,8 +1,9 @@
 "use client";
 
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 
-import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios, { AxiosResponse } from "axios";
 import {
   ControllerFieldState,
   ControllerRenderProps,
@@ -10,10 +11,10 @@ import {
   UseFormStateReturn,
   useForm,
 } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "react-hot-toast";
+import * as z from "zod";
 
-import { useStoreModal, useStoreModalStore } from "@/hooks/use-store-modal";
-import { Modal } from "@/components/ui/modal";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -23,7 +24,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Modal } from "@/components/ui/modal";
+import { useStoreModal, useStoreModalStore } from "@/hooks/use-store-modal";
 
 const formSchema: z.ZodObject<
   { name: z.ZodString },
@@ -38,6 +40,8 @@ const formSchema: z.ZodObject<
 export function StoreModal(): ReactElement {
   const StoreModal: useStoreModalStore = useStoreModal();
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   const form: UseFormReturn<{ name: string }, any, undefined> = useForm<
     z.infer<typeof formSchema>
   >({
@@ -47,9 +51,20 @@ export function StoreModal(): ReactElement {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    // TODO: Create Store
+  const onSubmit: (values: z.infer<typeof formSchema>) => Promise<void> = async (
+    values: z.infer<typeof formSchema>
+  ): Promise<void> => {
+    try {
+      setLoading(true);
+
+      const response: AxiosResponse<any, any> = await axios.post("/api/stores", values);
+
+      toast.success("Store created.");
+    } catch (error) {
+      toast.error("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -77,6 +92,7 @@ export function StoreModal(): ReactElement {
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
+                        disabled={loading}
                         placeholder="E-Commerce"
                         {...field}
                       />
@@ -87,12 +103,18 @@ export function StoreModal(): ReactElement {
               />
               <div className="pt-6 space-x-2 flex items-center justify-end w-full">
                 <Button
+                  disabled={loading}
                   variant="outline"
                   onClick={StoreModal.onClose}
                 >
                   Cancel
                 </Button>
-                <Button type="submit">Continue</Button>
+                <Button
+                  disabled={loading}
+                  type="submit"
+                >
+                  Continue
+                </Button>
               </div>
             </form>
           </Form>
