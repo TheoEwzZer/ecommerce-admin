@@ -50,7 +50,7 @@ function StoreSwitcher({ className, items = [] }: StoreSwitcherProps): ReactElem
     (item: FormatItem): boolean => item.value === params.storeId
   );
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const onStoreSelect: (store: FormatItem) => void = (store: FormatItem): void => {
     setOpen(false);

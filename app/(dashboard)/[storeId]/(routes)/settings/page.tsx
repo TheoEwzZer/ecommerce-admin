@@ -3,19 +3,12 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { ReactElement } from "react";
 import { SettingsForm } from "./components/settings-form";
+import { Store } from "@prisma/client";
 
 interface SettingsPageProps {
   params: {
     storeId: string;
   };
-}
-
-interface Store {
-  id: string;
-  name: string;
-  userId: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 async function SettingsPage({ params }: SettingsPageProps): Promise<ReactElement> {

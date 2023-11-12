@@ -105,7 +105,7 @@ export function SettingsForm({ initialData }: SettingsFormProps): ReactElement {
       <div className="flex items-center justify-between">
         <Heading
           title="Settings"
-          description="Manage store preferences."
+          description="Manage store preferences"
         />
         <Button
           disabled={loading}
