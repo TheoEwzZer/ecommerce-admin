@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.3.0...v1.4.0) (2023-11-12)
+
+
+### ✨ Features
+
+* add settings page ([1539202](https://github.com/TheoEwzZer/ecommerce-admin/commit/1539202078515608f80635fbc2fa0404607768d6))
+
+
+### ♻️ Code Refactoring
+
+* refactor code to import Store type from @prisma/client ([92aa3f9](https://github.com/TheoEwzZer/ecommerce-admin/commit/92aa3f9efff0ee05b0fe2e3c4a025bdc93526673))
+
+
+### 📦 Dependencies
+
+* add @radix-ui/react-separator package ([569c3ae](https://github.com/TheoEwzZer/ecommerce-admin/commit/569c3aee43daae6bd09dbffe5124121edc374191))
+
 ## [1.3.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.2.0...v1.3.0) (2023-11-12)
 
 
