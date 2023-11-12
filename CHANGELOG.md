@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.3.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.2.0...v1.3.0) (2023-11-12)
+
+
+### ✨ Features
+
+* add navbar, popover, main-nav, and store-switcher components ([44c4c79](https://github.com/TheoEwzZer/ecommerce-admin/commit/44c4c796a6e73171f5b5c19353a8e933e8258cbb))
+* refactor store interface and use Navbar component in dashboard layout ([113bd36](https://github.com/TheoEwzZer/ecommerce-admin/commit/113bd36bd75d6acb40ee88e6d41ee4100d2dc78a))
+
+
+### ♻️ Code Refactoring
+
+* refactor UI components to improve code readability ([dc9a135](https://github.com/TheoEwzZer/ecommerce-admin/commit/dc9a1355a42c94a3fc2eb855880f3c6db26b7b38))
+
+
+### 🔧 Other
+
+* release 1.2.0 ([7c14495](https://github.com/TheoEwzZer/ecommerce-admin/commit/7c144951b7666be6083a85df363eec127265a87f))
+
+
+### 📦 Dependencies
+
+* add new dependencies @radix-ui/react-popover and cmdk ([9cad8d7](https://github.com/TheoEwzZer/ecommerce-admin/commit/9cad8d7aa4cca9752f2473a20d4962ac6fb15cca))
+
 ## [1.2.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.1.0...v1.2.0) (2023-11-11)
 
 
