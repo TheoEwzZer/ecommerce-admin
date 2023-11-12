@@ -4,6 +4,14 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import prismadb from "@/lib/prismadb";
 
+interface Store {
+  id: string;
+  name: string;
+  userId: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export default async function SetupLayout({
   children,
 }: {
@@ -15,13 +23,7 @@ export default async function SetupLayout({
     redirect("/sign-in");
   }
 
-  const store: {
-    id: string;
-    name: string;
-    userId: string;
-    createdAt: Date;
-    updatedAt: Date;
-  } | null = await prismadb.store.findFirst({
+  const store: Store | null = await prismadb.store.findFirst({
     where: {
       userId,
     },

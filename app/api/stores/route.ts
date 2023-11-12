@@ -3,6 +3,14 @@ import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prismadb";
 
+interface Store {
+  id: string;
+  name: string;
+  userId: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export async function POST(req: Request) {
   try {
     const { userId } = auth();
@@ -18,13 +26,7 @@ export async function POST(req: Request) {
       return new NextResponse("Name is required", { status: 400 });
     }
 
-    const store: {
-      id: string;
-      name: string;
-      userId: string;
-      createdAt: Date;
-      updatedAt: Date;
-    } = await prismadb.store.create({
+    const store: Store = await prismadb.store.create({
       data: {
         name,
         userId,

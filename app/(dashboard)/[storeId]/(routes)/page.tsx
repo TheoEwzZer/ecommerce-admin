@@ -7,14 +7,16 @@ interface DashboardPageProps {
   };
 }
 
+interface Store {
+  id: string;
+  name: string;
+  userId: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 async function DashboardPage({ params }: DashboardPageProps): Promise<ReactElement> {
-  const store: {
-    id: string;
-    name: string;
-    userId: string;
-    createdAt: Date;
-    updatedAt: Date;
-  } | null = await prismadb.store.findFirst({
+  const store: Store | null = await prismadb.store.findFirst({
     where: {
       id: params.storeId,
     },
