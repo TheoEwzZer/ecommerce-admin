@@ -1,18 +1,11 @@
 import prismadb from "@/lib/prismadb";
 import { ReactElement } from "react";
+import { Store } from "@prisma/client";
 
 interface DashboardPageProps {
   params: {
     storeId: string;
   };
-}
-
-interface Store {
-  id: string;
-  name: string;
-  userId: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 async function DashboardPage({ params }: DashboardPageProps): Promise<ReactElement> {

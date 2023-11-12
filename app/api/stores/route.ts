@@ -2,16 +2,9 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prismadb";
+import { Store } from "@prisma/client";
 
-interface Store {
-  id: string;
-  name: string;
-  userId: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export async function POST(req: Request) {
+export async function POST(req: Request): Promise<NextResponse<unknown>> {
   try {
     const { userId } = auth();
     const body: any = await req.json();

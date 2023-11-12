@@ -21,6 +21,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { useStoreModal, useStoreModalStore } from "@/hooks/use-store-modal";
 import { useParams, useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { Store as Item } from "@prisma/client";
 
 type PopoverTriggerProps = ComponentPropsWithoutRef<typeof PopoverTrigger>;
 
@@ -31,14 +32,6 @@ interface StoreSwitcherProps extends PopoverTriggerProps {
 interface FormatItem {
   label: string;
   value: string;
-}
-
-interface Item {
-  id: string;
-  name: string;
-  userId: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 function StoreSwitcher({ className, items = [] }: StoreSwitcherProps): ReactElement {

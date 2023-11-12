@@ -3,14 +3,7 @@ import { ReactElement, ReactNode } from "react";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import prismadb from "@/lib/prismadb";
-
-interface Store {
-  id: string;
-  name: string;
-  userId: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import { Store } from "@prisma/client";
 
 export default async function SetupLayout({
   children,

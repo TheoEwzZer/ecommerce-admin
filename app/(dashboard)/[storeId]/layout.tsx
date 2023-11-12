@@ -6,13 +6,7 @@ import { auth } from "@clerk/nextjs";
 import prismadb from "@/lib/prismadb";
 import Navbar from "@/components/navbar";
 
-interface Store {
-  id: string;
-  name: string;
-  userId: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import { Store } from "@prisma/client";
 
 export default async function DashboardLayout({
   children,

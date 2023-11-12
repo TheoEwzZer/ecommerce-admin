@@ -7,13 +7,7 @@ import StoreSwitcher from "@/components/store-switcher";
 import { MainNav } from "@/components/main-nav";
 import prismadb from "@/lib/prismadb";
 
-interface Store {
-  id: string;
-  name: string;
-  userId: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import { Store } from "@prisma/client";
 
 async function Navbar(): Promise<ReactElement> {
   const { userId } = auth();
