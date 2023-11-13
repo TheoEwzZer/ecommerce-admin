@@ -30,7 +30,6 @@ import {
 import { Heading } from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { useOrigin } from "@/hooks/use-origin";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import ImageUpload from "@/components/ui/image-upload";
 
@@ -54,7 +53,6 @@ interface BillboardFormProps {
 export function BillboardForm({ initialData }: BillboardFormProps): ReactElement {
   const params = useParams();
   const router: AppRouterInstance = useRouter();
-  const origin: string = useOrigin();
 
   const [open, setOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
