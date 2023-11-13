@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.5.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.4.0...v1.5.0) (2023-11-12)
+
+
+### ✨ Features
+
+* add billboards feature to store dashboard ([f1f5d68](https://github.com/TheoEwzZer/ecommerce-admin/commit/f1f5d68a8700e45633c10052cc6248933ead1b43))
+
+
+### ♻️ Code Refactoring
+
+* refactor code ([94b6f49](https://github.com/TheoEwzZer/ecommerce-admin/commit/94b6f49d87bfdf185fc38538ea86a1229dcab1de))
+
+
+### 📦 Dependencies
+
+* add next-cloudinary package for image optimization ([c298111](https://github.com/TheoEwzZer/ecommerce-admin/commit/c2981117884a06af0691619d852d972568f1e022))
+
 ## [1.4.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.3.0...v1.4.0) (2023-11-12)
 
 
