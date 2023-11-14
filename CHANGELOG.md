@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.7.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.6.0...v1.7.0) (2023-11-14)
+
+
+### ✨ Features
+
+* add categories to Store and Billboard models ([ec5f15b](https://github.com/TheoEwzZer/ecommerce-admin/commit/ec5f15bdb4e72acaf897eacc302bacc6aec21b4d))
+* add category API routes ([a4bb2b4](https://github.com/TheoEwzZer/ecommerce-admin/commit/a4bb2b4f4c66a751534825d0003e4c59538f8d47))
+* add category components ([3a558d6](https://github.com/TheoEwzZer/ecommerce-admin/commit/3a558d66b9d4fa641c2ef5cd3116a04224320d0e))
+* add Select component with various subcomponents ([5da2deb](https://github.com/TheoEwzZer/ecommerce-admin/commit/5da2debddaace897510d23ab6deb838c995aa547))
+
+
+### 📦 Dependencies
+
+* add @radix-ui/react-select package and its ([d86cb9c](https://github.com/TheoEwzZer/ecommerce-admin/commit/d86cb9c05478136698cacd54830d7446a89c643b))
+* update prisma dependencies to latest versions ([2c6f282](https://github.com/TheoEwzZer/ecommerce-admin/commit/2c6f2826bb75a2901019bfdf7bc4e0a7af7ff703))
+
 ## [1.6.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.5.0...v1.6.0) (2023-11-13)
 
 
