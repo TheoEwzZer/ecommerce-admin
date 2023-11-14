@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.6.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.5.0...v1.6.0) (2023-11-13)
+
+
+### ✨ Features
+
+* add billboard management functionality ([be66779](https://github.com/TheoEwzZer/ecommerce-admin/commit/be66779b9adf13154ff6448691c6fe91bf44fcd6))
+* add UI components for API list, table and dropdown menu ([4543a26](https://github.com/TheoEwzZer/ecommerce-admin/commit/4543a26b6e3dca0b593aa6d76746545e9363d766))
+
+
+### 🔒️ Security
+
+* add publicRoutes to authMiddleware in ([63bcef2](https://github.com/TheoEwzZer/ecommerce-admin/commit/63bcef2ded943305fc1de54bfcb41d0009e02bcb))
+
+
+### ♻️ Code Refactoring
+
+* refactor billboards page to use BillboardColumn type ([287fe1b](https://github.com/TheoEwzZer/ecommerce-admin/commit/287fe1b3de6e1ddd4053fdf744ca2f24af30ab0b))
+* remove unused hook and variable from BillboardForm component ([398a60a](https://github.com/TheoEwzZer/ecommerce-admin/commit/398a60a6555c4ae4455e42b5dbbf1e6560ee91a2))
+
+
+### 📦 Dependencies
+
+* add new dependencies for dropdown, table, and date functions ([b532b1c](https://github.com/TheoEwzZer/ecommerce-admin/commit/b532b1cccc618aca7b7c508f9d69dae5fe6c5286))
+
 ## [1.5.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.4.0...v1.5.0) (2023-11-12)
 
 
