@@ -46,7 +46,7 @@ export function ApiAlert({
         </code>
         <Button
           variant="outline"
-          size="sm"
+          size="icon"
           onClick={(): void => onCopy(description)}
         >
           <Copy className="h-4 w-4" />

@@ -49,7 +49,7 @@ function ImageUpload({
                   type="button"
                   onClick={(): void => onRemove(url)}
                   variant="destructive"
-                  size="sm"
+                  size="icon"
                 >
                   <Trash className="h-4 w-4" />
                 </Button>

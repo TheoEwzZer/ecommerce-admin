@@ -132,7 +132,7 @@ export function BillboardForm({ initialData }: BillboardFormProps): ReactElement
           <Button
             disabled={loading}
             variant="destructive"
-            size="sm"
+            size="icon"
             onClick={(): void => setOpen(true)}
           >
             <Trash className="h-4 w-4" />
