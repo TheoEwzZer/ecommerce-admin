@@ -1,0 +1,80 @@
+import { NextResponse } from "next/server";
+import { auth } from "@clerk/nextjs";
+
+import prismadb from "@/lib/prismadb";
+import { Size, Store } from "@prisma/client";
+
+export async function POST(
+  req: Request,
+  { params }: { params: { storeId: string } }
+): Promise<NextResponse<unknown>> {
+  try {
+    const { userId } = auth();
+
+    const body: any = await req.json();
+
+    const { name, value } = body;
+
+    if (!userId) {
+      return new NextResponse("Unauthenticated", { status: 403 });
+    }
+
+    if (!name) {
+      return new NextResponse("Name is required", { status: 400 });
+    }
+
+    if (!value) {
+      return new NextResponse("Value is required", { status: 400 });
+    }
+
+    if (!params.storeId) {
+      return new NextResponse("Store ID is required", { status: 400 });
+    }
+
+    const storeByUserId: Store | null = await prismadb.store.findFirst({
+      where: {
+        id: params.storeId,
+        userId,
+      },
+    });
+
+    if (!storeByUserId) {
+      return new NextResponse("Unauthorized", { status: 405 });
+    }
+
+    const size: Size = await prismadb.size.create({
+      data: {
+        name,
+        value,
+        storeId: params.storeId,
+      },
+    });
+
+    return NextResponse.json(size);
+  } catch (error) {
+    console.log("[SIZES_POST]", error);
+    return new NextResponse("Internal server error", { status: 500 });
+  }
+}
+
+export async function GET(
+  _req: Request,
+  { params }: { params: { storeId: string } }
+): Promise<NextResponse<unknown>> {
+  try {
+    if (!params.storeId) {
+      return new NextResponse("Store ID is required", { status: 400 });
+    }
+
+    const sizes: Size[] | null = await prismadb.size.findMany({
+      where: {
+        storeId: params.storeId,
+      },
+    });
+
+    return NextResponse.json(sizes);
+  } catch (error) {
+    console.log("[SIZES_GET]", error);
+    return new NextResponse("Internal server error", { status: 500 });
+  }
+}
