@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.8.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.7.0...v1.8.0) (2023-11-15)
+
+
+### ✨ Features
+
+* add sizes model managing sizes ([6dbc029](https://github.com/TheoEwzZer/ecommerce-admin/commit/6dbc0297e149540824cd234cf4adea60027e1029))
+* add sizes pages for managing sizes ([02bf272](https://github.com/TheoEwzZer/ecommerce-admin/commit/02bf2729d987700cdd73107359a836762f3d985f))
+
+
+### 📦 Dependencies
+
+* bump axios from 1.6.1 to 1.6.2 ([d8523e6](https://github.com/TheoEwzZer/ecommerce-admin/commit/d8523e65a75b8ca6988eee286b131bdce39f791d))
+* bump next-cloudinary from 5.6.0 to 5.7.0 ([10f355a](https://github.com/TheoEwzZer/ecommerce-admin/commit/10f355af4b4d6fb69242cbec9727e713a1515d97))
+
 ## [1.7.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.6.0...v1.7.0) (2023-11-14)
 
 
