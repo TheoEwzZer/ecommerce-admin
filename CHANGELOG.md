@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.10.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.9.0...v1.10.0) (2023-11-15)
+
+
+### ✨ Features
+
+* add products and images model managing products ([56d321e](https://github.com/TheoEwzZer/ecommerce-admin/commit/56d321eec0cb1ab6ffaedcd3c19b4764795ef938))
+* add products and images page managing products ([8b9655f](https://github.com/TheoEwzZer/ecommerce-admin/commit/8b9655fe01ec0612352c481e6e81d060c01dffcc))
+
+
+### ♻️ Code Refactoring
+
+* add billboard to category interface and update error messages ([8449741](https://github.com/TheoEwzZer/ecommerce-admin/commit/8449741dbe6fb5dae8b34e6ff13d23a19232ba86))
+
+
+### 💄 Styles
+
+* add Checkbox component to UI library ([9c8e23b](https://github.com/TheoEwzZer/ecommerce-admin/commit/9c8e23be19a0e7fc1f69cafd697a657b5942939c))
+
+
+### 🔧 Other
+
+* add currency formatter to utils.ts ([3718dde](https://github.com/TheoEwzZer/ecommerce-admin/commit/3718dde3c0ea6122395830ed09d43929e7343897))
+
+
+### 📦 Dependencies
+
+* add @radix-ui/react-checkbox package ([d5d1fb7](https://github.com/TheoEwzZer/ecommerce-admin/commit/d5d1fb7aee37cacb8137e435c1b95b22341b9480))
+
 ## [1.9.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.8.0...v1.9.0) (2023-11-15)
 
 
