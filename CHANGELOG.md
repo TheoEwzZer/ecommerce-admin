@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.8.0...v1.9.0) (2023-11-15)
+
+
+### ✨ Features
+
+* add colors model managing colors ([ee28749](https://github.com/TheoEwzZer/ecommerce-admin/commit/ee2874911deac5c0425430b97d44000ca5076079))
+* add colors pages for managing colors ([20a2464](https://github.com/TheoEwzZer/ecommerce-admin/commit/20a246419ae8f4d0c8313d176fd0d3bb49c537b5))
+
+
+### 💄 Styles
+
+* update button sizes to use icons instead of small ([7c05364](https://github.com/TheoEwzZer/ecommerce-admin/commit/7c05364a88392e36eab4fd67bc62b37ad97f413b))
+
 ## [1.8.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.7.0...v1.8.0) (2023-11-15)
 
 
