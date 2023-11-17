@@ -35,7 +35,7 @@ export function ProductClient({ data }: BillBoardClientProps): ReactElement {
       </div>
       <Separator />
       <DataTable
-        searchKey="label"
+        searchKey="name"
         columns={columns}
         data={data}
       />
