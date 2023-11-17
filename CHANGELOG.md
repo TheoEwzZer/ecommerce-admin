@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.11.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.10.0...v1.11.0) (2023-11-17)
+
+
+### ✨ Features
+
+* add Order and OrderItem models ([b0a339a](https://github.com/TheoEwzZer/ecommerce-admin/commit/b0a339a20c2e01c1e489906b79974f99dc4f826d))
+* add order management  page ([a50e1ee](https://github.com/TheoEwzZer/ecommerce-admin/commit/a50e1ee39e9537a5b706352f3ec757a46806a838))
+* add order management components ([36687d4](https://github.com/TheoEwzZer/ecommerce-admin/commit/36687d450f436564b46a85e63954e8586700f86b))
+
+
+### 🐛 Bug Fixes
+
+* update search key in DataTable component ([1d2d4f8](https://github.com/TheoEwzZer/ecommerce-admin/commit/1d2d4f896f4f224cd1c3165d690a7468c8938ffd))
+
+
+### 📦 Dependencies
+
+* bump @types/node from 20.9.0 to 20.9.1 ([1ff3580](https://github.com/TheoEwzZer/ecommerce-admin/commit/1ff3580be67017d81c80e261ab28e59ec6996de8))
+* bump eslint-config-next from 14.0.2 to 14.0.3 ([75eb160](https://github.com/TheoEwzZer/ecommerce-admin/commit/75eb160e9ab1dfdc629bca497629c38a034422f7))
+* bump next from 14.0.2 to 14.0.3 ([7cdcb2b](https://github.com/TheoEwzZer/ecommerce-admin/commit/7cdcb2b05941edd29e9b472e9f13ed26107a910d))
+
 ## [1.10.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.9.0...v1.10.0) (2023-11-15)
 
 
