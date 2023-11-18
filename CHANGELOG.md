@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.12.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.11.0...v1.12.0) (2023-11-18)
+
+
+### ✨ Features
+
+* add stripe integration ([adbeedc](https://github.com/TheoEwzZer/ecommerce-admin/commit/adbeedc8e3b10e3097ea9f8ac771ad700a76c406))
+
+
+### 📦 Dependencies
+
+* add stripe package for payment processing ([9f0994a](https://github.com/TheoEwzZer/ecommerce-admin/commit/9f0994a60560e3ddefa5556da35cf11454a95a76))
+
 ## [1.11.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.10.0...v1.11.0) (2023-11-17)
 
 
