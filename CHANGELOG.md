@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.13.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.12.0...v1.13.0) (2023-11-18)
+
+
+### ✨ Features
+
+* add functions to get sales count, stock count, ([721da37](https://github.com/TheoEwzZer/ecommerce-admin/commit/721da37cc071571b16aeda6d5893c6e93baf21d7))
+* add new components for card ([903fe91](https://github.com/TheoEwzZer/ecommerce-admin/commit/903fe91d92379d0f241e997a3d8ed1b52ccbde71))
+* add new components for overview ([072382b](https://github.com/TheoEwzZer/ecommerce-admin/commit/072382b31c87a465c8c2f9ebe255689ea0fa5c52))
+* refactor dashboard page to display store overview ([e73cd6d](https://github.com/TheoEwzZer/ecommerce-admin/commit/e73cd6d27dfdd51d036d59c7971fc1ff69223392))
+
+
+### 📦 Dependencies
+
+* add recharts library ([917e1f2](https://github.com/TheoEwzZer/ecommerce-admin/commit/917e1f2494c0d2a778ac89bcdc2ef8a387d7dd46))
+
 ## [1.12.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.11.0...v1.12.0) (2023-11-18)
 
 
