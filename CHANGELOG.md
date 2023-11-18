@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.14.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.13.0...v1.14.0) (2023-11-18)
+
+
+### ✨ Features
+
+* add theme toggle ([79d7f8a](https://github.com/TheoEwzZer/ecommerce-admin/commit/79d7f8a873cca75725c3c093a2dd04b7d8e6f213))
+
+
+### 🐛 Bug Fixes
+
+* add postinstall script to generate Prisma client ([9ea6027](https://github.com/TheoEwzZer/ecommerce-admin/commit/9ea60275742e015f04a07157b3921e8d924880e5))
+
+
+### 📦 Dependencies
+
+* add next-themes package ([87f9a25](https://github.com/TheoEwzZer/ecommerce-admin/commit/87f9a25eae237afe625f60a82ad80b35209215d6))
+
 ## [1.13.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.12.0...v1.13.0) (2023-11-18)
 
 
