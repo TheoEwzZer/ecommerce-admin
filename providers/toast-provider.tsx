@@ -4,6 +4,6 @@ import { ReactElement } from "react";
 
 import { Toaster } from "react-hot-toast";
 
-export function ToasterProvider(): ReactElement {
+export function ToastProvider(): ReactElement {
   return <Toaster />;
 }
