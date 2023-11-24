@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.1](https://github.com/TheoEwzZer/ecommerce-admin/compare/v2.0.0...v2.0.1) (2023-11-24)
+
+
+### 📦 Dependencies
+
+* bump @clerk/nextjs from 4.27.1 to 4.27.2 ([bc97a56](https://github.com/TheoEwzZer/ecommerce-admin/commit/bc97a56e9e48f9efece8e3536bcff8e650ee5104))
+* bump @types/node from 20.9.1 to 20.9.2 ([4343d14](https://github.com/TheoEwzZer/ecommerce-admin/commit/4343d14d4e64f857a5986812b43986db1753c0ad))
+* bump @types/node from 20.9.2 to 20.9.3 ([0d62424](https://github.com/TheoEwzZer/ecommerce-admin/commit/0d62424b65e6b31011f0c0e5b854da4fb35e9dbd))
+* bump @types/node from 20.9.3 to 20.9.4 ([5cbe07f](https://github.com/TheoEwzZer/ecommerce-admin/commit/5cbe07f8888fa62a302d8b2e81b006ffb92c10aa))
+* bump @types/node from 20.9.4 to 20.9.5 ([3936f36](https://github.com/TheoEwzZer/ecommerce-admin/commit/3936f36b587e4bc1c55996b60004b3180e8c3e65))
+* bump @types/react from 18.2.37 to 18.2.38 ([177a2b5](https://github.com/TheoEwzZer/ecommerce-admin/commit/177a2b5d0c62881b4d491a94de7ee507f1daf7a7))
+* bump @types/react-dom from 18.2.15 to 18.2.16 ([c00cd9a](https://github.com/TheoEwzZer/ecommerce-admin/commit/c00cd9a2d5e7f967db016c0a1b9e898568fcd082))
+* bump @types/react-dom from 18.2.16 to 18.2.17 ([cabbd5e](https://github.com/TheoEwzZer/ecommerce-admin/commit/cabbd5e0e2c71f15d27e521b9d7310d7f4aefe34))
+* bump eslint from 8.53.0 to 8.54.0 ([2a026d7](https://github.com/TheoEwzZer/ecommerce-admin/commit/2a026d7da47a4d342a6f4cf16bcb25bfdbeede60))
+* bump recharts from 2.9.3 to 2.10.1 ([d2fdae8](https://github.com/TheoEwzZer/ecommerce-admin/commit/d2fdae893dbd521579fff4c5fbbe8a3eeedb09d7))
+
+
+### 📝 Documentation
+
+* add README images ([b486a9a](https://github.com/TheoEwzZer/ecommerce-admin/commit/b486a9a3714bab649c564a878ea603778d5deedc))
+* update README ([86a18ad](https://github.com/TheoEwzZer/ecommerce-admin/commit/86a18ad459a243a22d0add9d46227cb13ca9f94a))
+
 ## [2.0.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.14.0...v2.0.0) (2023-11-18)
 
 
