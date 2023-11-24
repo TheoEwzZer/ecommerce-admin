@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.14.0...v2.0.0) (2023-11-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* update autoprefixer and tailwindcss versions
+
+### ✨ Features
+
+* add loading components for different routes ([80076b6](https://github.com/TheoEwzZer/ecommerce-admin/commit/80076b6607acfef4bf3775a23fcbb1f86c18c501))
+
+
+### 📦 Dependencies
+
+* add react-spinners package ([d2c63c7](https://github.com/TheoEwzZer/ecommerce-admin/commit/d2c63c73811a2cb49c18805b1d1f67e247b052f0))
+* update autoprefixer and tailwindcss versions ([851f01f](https://github.com/TheoEwzZer/ecommerce-admin/commit/851f01fdaf82730a3bee6318fc867e83885c1702))
+
 ## [1.14.0](https://github.com/TheoEwzZer/ecommerce-admin/compare/v1.13.0...v1.14.0) (2023-11-18)
 
 
