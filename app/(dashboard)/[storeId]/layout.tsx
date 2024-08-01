@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
 
 import { redirect } from "next/navigation";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 import prismadb from "@/lib/prismadb";
 import Navbar from "@/components/navbar";

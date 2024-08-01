@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from "react";
 
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import prismadb from "@/lib/prismadb";
 import { Store } from "@prisma/client";

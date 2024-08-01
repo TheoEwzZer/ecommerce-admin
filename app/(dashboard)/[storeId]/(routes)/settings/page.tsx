@@ -1,5 +1,5 @@
 import prismadb from "@/lib/prismadb";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { ReactElement } from "react";
 import { SettingsForm } from "./components/settings-form";
@@ -11,7 +11,9 @@ interface SettingsPageProps {
   };
 }
 
-async function SettingsPage({ params }: SettingsPageProps): Promise<ReactElement> {
+async function SettingsPage({
+  params,
+}: SettingsPageProps): Promise<ReactElement> {
   const { userId } = auth();
 
   if (!userId) {

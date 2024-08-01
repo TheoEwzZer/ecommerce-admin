@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 import prismadb from "@/lib/prismadb";
 import { Billboard, Category, Store } from "@prisma/client";
@@ -17,14 +17,15 @@ export async function GET(
       return new NextResponse("Category ID is required", { status: 400 });
     }
 
-    const category: CombinedCategory | null = await prismadb.category.findUnique({
-      where: {
-        id: params.categoryId,
-      },
-      include: {
-        billboard: true,
-      },
-    });
+    const category: CombinedCategory | null =
+      await prismadb.category.findUnique({
+        where: {
+          id: params.categoryId,
+        },
+        include: {
+          billboard: true,
+        },
+      });
 
     return NextResponse.json(category);
   } catch (error) {

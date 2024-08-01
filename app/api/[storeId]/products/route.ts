@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 import prismadb from "@/lib/prismadb";
 import { Category, Color, Image, Product, Size, Store } from "@prisma/client";
@@ -13,8 +13,16 @@ export async function POST(
 
     const body: any = await req.json();
 
-    const { name, price, categoryId, colorId, sizeId, images, isFeatured, isArchived } =
-      body;
+    const {
+      name,
+      price,
+      categoryId,
+      colorId,
+      sizeId,
+      images,
+      isFeatured,
+      isArchived,
+    } = body;
 
     if (!userId) {
       return new NextResponse("Unauthenticated", { status: 403 });
@@ -71,7 +79,9 @@ export async function POST(
         storeId: params.storeId,
         images: {
           createMany: {
-            data: [...images.map((image: { url: string }): { url: string } => image)],
+            data: [
+              ...images.map((image: { url: string }): { url: string } => image),
+            ],
           },
         },
       },
@@ -90,8 +100,10 @@ export async function GET(
 ): Promise<NextResponse<unknown>> {
   try {
     const { searchParams } = new URL(req.url);
-    const categoryId: string | undefined = searchParams.get("categoryId") || undefined;
-    const colorId: string | undefined = searchParams.get("colorId") || undefined;
+    const categoryId: string | undefined =
+      searchParams.get("categoryId") || undefined;
+    const colorId: string | undefined =
+      searchParams.get("colorId") || undefined;
     const sizeId: string | undefined = searchParams.get("sizeId") || undefined;
     const isFeatured: string | null = searchParams.get("isFeatured");
 

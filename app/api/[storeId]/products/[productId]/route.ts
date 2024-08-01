@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prismadb";
@@ -87,8 +87,16 @@ export async function PATCH(
 
     const body: any = await req.json();
 
-    const { name, price, categoryId, images, colorId, sizeId, isFeatured, isArchived } =
-      body;
+    const {
+      name,
+      price,
+      categoryId,
+      images,
+      colorId,
+      sizeId,
+      isFeatured,
+      isArchived,
+    } = body;
 
     if (!userId) {
       return new NextResponse("Unauthenticated", { status: 403 });
@@ -158,7 +166,9 @@ export async function PATCH(
       data: {
         images: {
           createMany: {
-            data: [...images.map((image: { url: string }): { url: string } => image)],
+            data: [
+              ...images.map((image: { url: string }): { url: string } => image),
+            ],
           },
         },
       },
