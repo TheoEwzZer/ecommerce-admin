@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 
-import { UserButton, auth } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 import StoreSwitcher from "@/components/store-switcher";
@@ -30,7 +31,7 @@ async function Navbar(): Promise<ReactElement> {
         <MainNav className="mx-6" />
         <div className="ml-auto flex items-center space-x-4">
           <ThemeToggle />
-          <UserButton afterSignOutUrl="/" />
+          <UserButton />
         </div>
       </div>
     </div>

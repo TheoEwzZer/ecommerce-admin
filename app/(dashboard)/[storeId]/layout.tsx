@@ -7,6 +7,7 @@ import prismadb from "@/lib/prismadb";
 import Navbar from "@/components/navbar";
 
 import { Store } from "@prisma/client";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export default async function DashboardLayout({
   children,
@@ -34,7 +35,9 @@ export default async function DashboardLayout({
 
   return (
     <>
-      <Navbar />
+      <ClerkProvider afterSignOutUrl="/">
+        <Navbar />
+      </ClerkProvider>
       {children}
     </>
   );
